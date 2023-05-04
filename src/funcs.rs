@@ -407,9 +407,9 @@ pub fn clean_msg(
 
         let said_name = nickname.unwrap_or_else(|| member_nick.unwrap_or(&user.name));
         content = match attachments_to_format(attachments) {
-            Some(file_format) if content.is_empty() => format!("{said_name} sent {file_format}"),
-            Some(file_format) => format!("{said_name} sent {file_format} and said {content}"),
-            None => format!("{said_name} said: {content}"),
+            Some(file_format) if content.is_empty() => format!("{said_name} stuurde {file_format}"),
+            Some(file_format) => format!("{said_name} stuurde {file_format} en zei {content}"),
+            None => format!("{said_name} zei: {content}"),
         }
     } else if contained_url {
         write!(content, "{}",
